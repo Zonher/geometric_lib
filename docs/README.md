@@ -125,7 +125,55 @@ print(perimeter(x,y,z))
 *OUTPUT: 9*
 
 ***Принимает x,y,z, выводит их сумму***
+## Тесты
+### Circle Tests
+**Предоставлено несколько тестов для проверки работоспособности функций circle**
+```python
+def test_circle_area_float_numb(self):  
+        res = circle.area(3.35) 
+        self.assertEqual(res, 35.25652355491146)  
 
+    def test_circle_zero_area(self):  
+        res = circle.area(0) 
+        self.assertEqual(res, 0)
+'''
+Проверка ожидаемого результата с дробными значениями и проверка с нулевым значением
+'''
+
+```
+### Rectangle Tests
+**Предоставлено несколько тестов для проверки работоспособности функций rectangle**
+```python
+def test_rectangle_perimeter_real_numbers(self):  # Тестирование периметра с вещественными числами
+        res = rectangle.perimeter(4.25, 7.36)  # Вычисление периметра с длиной 4.25 и шириной 7.36
+        self.assertEqual(res, 23.22)  # Проверка на равенство ожидаемому значению
+
+    def test_rectangle_perimeter_zero(self):  # Тестирование периметра с одной стороной равной нулю
+        res = rectangle.perimeter(4, 0)  # Вычисление периметра при ширине 0
+        self.assertEqual(res, 8)  # Проверка результата
+```
+### Square Tests
+**Предоставлено несколько тестов для проверки работоспособности функций square**
+```python
+def test_square_area_ex(self):  # Тестирование корректного расчета площади квадрата
+        rst = square.area(5)  # Вычисление площади квадрата со стороной 5
+        self.assertEqual(rst, 25)  # Проверка, что результат равен ожидаемому значению 25
+
+    def test_square_area_neg(self):  # Тестирование поведения при отрицательной стороне квадрата
+        res = square.area(-5)  # Вычисление площади квадрата со стороной -5
+        self.assertEqual(res, 25)  # Проверка, что результат (некорректное поведение) равен 25
+```
+### Triangle Tests
+**Предоставлено несколько тестов для проверки работоспособности функций triangle**
+```python
+def test_triangle_perimeter_no(self):  # Тестирование поведения при отрицательной стороне
+        res = triangle.perimeter(2, -8, 11)  # Вычисление периметра с одной отрицательной стороной
+        self.assertEqual(res, 5)  # Проверка, что периметр равен 5
+
+    def test_triangle_perimeter_real_numbers(self):  # Тестирование периметра с вещественными числами
+        res = triangle.perimeter(2.75, 8.6, 11)  # Вычисление периметра с длинами 2.75, 8.6, 11
+        self.assertEqual(res, 22.35)  # Проверка на соответствие результату 
+```
 
 ## История изменений
 ```bash
