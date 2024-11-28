@@ -1,48 +1,44 @@
-name: CI/CD 
-on: 
- push: 
-   branches: 
-      - main 
-      - documentation
-      - newfeature-465352
-      - newfeature-465352-megatest
-pull_request: 
-branches: 
-      - main 
-      - documentation
-      - newfeature-465352
-      - newfeature-465352-megatest
+name: CI/CD  
+on:  
+  push:  
+    branches:  
+      - main  
+      - documentation 
+      - newfeature-465352 
+      - newfeature-465352-megatest 
+  pull_request:  
+    branches:  
+      - main  
+      - documentation 
+      - newfeature-465352 
+      - newfeature-465352-megatest 
 
-permissions: 
-contents: read 
-jobs: 
-test-on-linux: 
-   runs-on: ubuntu-latest 
-steps: 
-      - 
-      - 
-      - 
-name: Checkout code 
-uses: actions/checkout@v3 
-name: Set up Python 3.11.9 
-uses: actions/setup-python@v3 
-   with: 
-python-version: "3.11.9" 
-architecture: x64 
-name: Run tests 
- run: python.exe -m unittest circle.py rectangle.py square.py triangle.py
-  test-on-windows: 
-runs-on: windows-latest 
-steps: 
-      - 
-      - 
-      - 
-name: Checkout code 
-uses: actions/checkout@v3 
-name: Set up Python 3.11.9 
-uses: actions/setup-python@v3 
-with: 
-python-version: "3.11.9" 
-architecture: x64 
-name: Run tests 
-  run: python.exe -m unittest circle.py rectangle.py square.py triangle.py 
+permissions:  
+  contents: read  
+
+jobs:  
+  test-on-linux:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: Checkout code  
+        uses: actions/checkout@v3  
+      - name: Set up Python 3.11.9  
+        uses: actions/setup-python@v3  
+        with:  
+          python-version: "3.11.9"  
+          architecture: x64  
+      - name: Run tests  
+        run: python -m unittest circle.py rectangle.py square.py triangle.py 
+
+  test-on-windows:  
+    runs-on: windows-latest  
+    steps:  
+      - name: Checkout code  
+        uses: actions/checkout@v3  
+      - name: Set up Python 3.11.9  
+        uses: actions/setup-python@v3  
+        with:  
+          python-version: "3.11.9"  
+          architecture: x64  
+      - name: Run tests  
+        run: python -m unittest circle.py rectangle.py square.py triangle.py 
