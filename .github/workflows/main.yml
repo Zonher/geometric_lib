@@ -3,11 +3,11 @@ on:
  push: 
    branches: 
       - main 
-      - cicd_413031 
+      - cicd_465352
 pull_request: 
 branches: 
       - main 
-      - cicd_413031 
+      - cicd_465352 
 permissions: 
 contents: read 
 jobs: 
@@ -19,13 +19,13 @@ steps:
       - 
 name: Checkout code 
 uses: actions/checkout@v3 
-name: Set up Python 3.10 
+name: Set up Python 3.11.9 
 uses: actions/setup-python@v3 
    with: 
-python-version: "3.10" 
+python-version: "3.11.9" 
 architecture: x64 
 name: Run tests 
- run: python.exe -m unittest circle.py rectangle.py square.py triangle.py
+ run: python.exe -m unittest 
   test-on-windows: 
 runs-on: windows-latest 
 steps: 
@@ -34,10 +34,10 @@ steps:
       - 
 name: Checkout code 
 uses: actions/checkout@v3 
-name: Set up Python 3.10 
+name: Set up Python 3.11.9 
 uses: actions/setup-python@v3 
 with: 
-python-version: "3.10" 
+python-version: "3.11.9" 
 architecture: x64 
 name: Run tests 
-  run: python.exe -m unittest circle.py rectangle.py square.py triangle.py 
+  run: python.exe -m unittest 
