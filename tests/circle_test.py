@@ -9,7 +9,7 @@ class CircleTestCase(unittest.TestCase):  # Определение класса 
 
     def test_circle_neg_area(self):  # Тестирование обработки отрицательного радиуса
         res = circle.area(-5)  # Вычисление площади для отрицательного радиуса
-        self.assertEqual(res, 78.53981633974483)  # Проверка ожидаемого значения (некорректное поведение)
+        self.assertEqual(res, "area cannot be negative")  # Проверка ожидаемого значения (некорректное поведение)
 
     def test_circle_area_float_numb(self):  # Тестирование вычисления площади для вещественного числа
         res = circle.area(3.35)  # Вычисление площади с радиусом 3.35
@@ -25,7 +25,7 @@ class CircleTestCase(unittest.TestCase):  # Определение класса 
 
     def test_circle_perimeter_no(self):  # Тестирование обработки отрицательного радиуса для периметра
         res = circle.perimeter(-3)  # Вычисление периметра для отрицательного радиуса
-        self.assertEqual(res, -18.84955592153876)  # Проверка на отрицательное значение (некорректное поведение)
+        self.assertEqual(res, "perimeter cannot be negative")  # Проверка на отрицательное значение (некорректное поведение)
 
     def test_circle_perimeter_float_num(self):  # Тестирование периметра для вещественного числа
         res = circle.perimeter(3.35)  # Вычисление периметра с радиусом 3.35

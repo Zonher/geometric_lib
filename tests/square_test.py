@@ -25,7 +25,7 @@ class SquareTestCase(unittest.TestCase):  # Определение класса 
 
     def test_square_perimeter_no(self):  # Тестирование поведения при отрицательной стороне квадрата
         res = square.perimeter(-3)  # Вычисление периметра квадрата со стороной -3
-        self.assertEqual(res, -12)  # Проверка, что результат (некорректное поведение) равен -12
+        self.assertEqual(res, "perimeter cannot be negative")  # Проверка, что результат (некорректное поведение) равен -12
 
     def test_square_perimeter_float_num(self):  # Тестирование периметра с вещественным числом
         res = square.perimeter(4.12)  # Вычисление периметра квадрата со стороной 4.12

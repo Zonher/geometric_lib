@@ -9,7 +9,7 @@ class RectangleTestCase(unittest.TestCase):  # Определение класс
 
     def test_rectangle_area_no(self):  # Тестирование поведения при отрицательном значении ширины
         res = rectangle.area(4, -7)  # Вычисление площади с отрицательной шириной
-        self.assertEqual(res, -28)  # Проверка, что результат соответствует ожидаемому (некорректное поведение)
+        self.assertEqual(res, "area cannot be negative")  # Проверка, что результат соответствует ожидаемому (некорректное поведение)
 
     def test_rectangle_area_real_numbers(self):  # Тестирование площади с вещественными числами
         res = rectangle.area(4.25, 7.36)  # Вычисление площади с длиной 4.25 и шириной 7.36
@@ -25,7 +25,7 @@ class RectangleTestCase(unittest.TestCase):  # Определение класс
 
     def test_rectangle_perimeter_no(self):  # Тестирование поведения при отрицательной ширине
         res = rectangle.perimeter(4, -7)  # Вычисление периметра с отрицательной шириной
-        self.assertEqual(res, -6)  # Проверка, что результат соответствует ожидаемому (некорректное поведение)
+        self.assertEqual(res, "perimeter cannot be negative")  # Проверка, что результат соответствует ожидаемому (некорректное поведение)
 
     def test_rectangle_perimeter_real_numbers(self):  # Тестирование периметра с вещественными числами
         res = rectangle.perimeter(4.25, 7.36)  # Вычисление периметра с длиной 4.25 и шириной 7.36
