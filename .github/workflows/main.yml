@@ -25,7 +25,7 @@ uses: actions/setup-python@v3
 python-version: "3.11.9" 
 architecture: x64 
 name: Run tests 
- run: python.exe -m unittest 
+ run: python.exe -m unittest circle.py rectangle.py square.py triangle.py
   test-on-windows: 
 runs-on: windows-latest 
 steps: 
@@ -40,4 +40,4 @@ with:
 python-version: "3.11.9" 
 architecture: x64 
 name: Run tests 
-  run: python.exe -m unittest 
+  run: python.exe -m unittest circle.py rectangle.py square.py triangle.py 
